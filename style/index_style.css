@@ -1,0 +1,462 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Anton";
+  font-weight: bold;
+}
+body {
+  background-color: #000000e0;
+}
+/* 漢堡 */
+.main-header {
+  background-color: #fff;
+  opacity: 90%;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 999;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  align-items: center;
+}
+.logo_phone h1 img {
+  height: 50px;
+  width: 50px;
+  vertical-align: bottom;
+}
+
+#menu-check {
+  display: none;
+}
+.main-nav a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.hb {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  position: relative;
+}
+.hb:before,
+.hb:after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  background-color: #fff;
+  right: 0;
+  left: 0;
+  margin: auto;
+  transform: rotate(0deg);
+}
+.hb:before {
+  top: 5px;
+  box-shadow: 0px 13px 0px #fff;
+  transition: box-shadow 0.3s 0.6s, top 0.3s 0.3s, transform 0.3s 0s;
+}
+.hb:after {
+  bottom: 5px;
+  transition: bottom 0.3s 0.3s, transform 0.3s 0s;
+}
+#menu-check:checked ~ .main-header .hb:before {
+  top: 18px;
+  box-shadow: 0px 10px 0px #000000;
+  transform: rotate(45deg);
+  transition: box-shadow 0.3s 0s, top 0.3s 0.3s, transform 0.3s 0.6s;
+}
+#menu-check:checked ~ .main-header .hb:after {
+  bottom: 18px;
+  transform: rotate(-45deg);
+  transition: bottom 0.3s 0.3s, transform 0.3s 0.6s;
+}
+.main-nav {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: -100%;
+  opacity: 0;
+  background-color: #000000f1;
+  transition: opacity 1s, left 0s 0.9s;
+}
+#menu-check:checked ~ .main-header .main-nav {
+  left: 0;
+  opacity: 1;
+  transition: 1s;
+}
+.main-nav a {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+}
+.main-nav a + a {
+  border-top: 1px solid #fff;
+}
+
+/* 第一區 */
+.search_page div {
+  color: white;
+  background-image: url(../pic/KurtCobain.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.search_bar {
+  width: 300px;
+  height: 50px;
+  font-size: 36px;
+  border-radius: 50px;
+  margin: 200px 10px;
+  text-align: center;
+  border: none;
+}
+.search_btn {
+  border-radius: 50px;
+  width: 50px;
+  font-size: 30px;
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+}
+/* 第二區 */
+.activity {
+  position: relative;
+}
+.activity h2 {
+  position: absolute;
+  color: rgba(100, 100, 100, 0.8);
+  letter-spacing: 2px;
+  font-size: 120px;
+  z-index: -10;
+  margin-left: 80px;
+}
+.album {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.album div {
+  padding-top: 100px;
+  width: 15%;
+  margin: 20px;
+  opacity: 70%;
+}
+.album div:nth-child(even) {
+  margin-top: 100px;
+}
+.album div:hover {
+  opacity: 100%;
+}
+.album img {
+  width: 100%;
+  box-shadow: 0 1px 3px gray;
+  transition: 1s;
+}
+.album img:hover {
+  transform: scale(1.3);
+}
+
+.date {
+  text-align: right;
+  color: red;
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+.theme {
+  color: yellow;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+/* 第三區 */
+.featured h2 {
+  position: absolute;
+  color: rgba(100, 100, 100, 0.8);
+  font-size: 120px;
+  z-index: -10;
+  margin-left: 80px;
+}
+.featured_product {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.featured_product div {
+  padding-top: 120px;
+  width: 15%;
+  margin: 20px;
+  opacity: 70%;
+  transition: 1s;
+}
+.featured_product div:nth-child(odd) {
+  margin-top: 120px;
+}
+.featured_product div:hover {
+  opacity: 100%;
+  transform: scale(1.3);
+}
+.record {
+  color: yellow;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.featured_product img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px gray;
+}
+/* 第四區 */
+.location {
+  padding-top: 80px;
+}
+.video {
+  width: 100%;
+  aspect-ratio: 600 / 400;
+}
+.video iframe {
+  width: 100%;
+  height: 100%;
+}
+.address {
+  text-align: center;
+}
+.address h3 {
+  color: red;
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+.address p {
+  color: #fff;
+  line-height: 50px;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 頁尾 */
+footer {
+  background-color: rgba(158, 145, 145, 0.349);
+}
+footer p {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.contact ul {
+  display: flex;
+  justify-content: center;
+}
+.contact ul li {
+  margin: 5px 15px;
+  list-style-type: none;
+}
+
+.contact ul li a {
+  color: #fff;
+  font-size: 50px;
+}
+
+.copy_right p {
+  color: rgba(167, 167, 167, 0.8);
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*電腦*/
+@media screen and (min-width: 768px) {
+  .main-header {
+    display: none;
+  }
+  .login {
+    background-color: #000000;
+    opacity: 80%;
+    text-align: right;
+  }
+  .login a + a::before {
+    content: "/";
+    color: white;
+    margin-right: 20px;
+  }
+  .login a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .login a:hover {
+    color: yellow;
+  }
+
+  .computer_header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  .computer_header nav {
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 5px 5px rgb(77, 77, 77);
+  }
+  .computer_header nav ul li a:hover {
+    color: red;
+  }
+  .logo img {
+    width: 100px;
+    vertical-align: bottom;
+  }
+  .computer_header nav ul li {
+    display: inline-block;
+    width: 15%;
+    vertical-align: middle;
+  }
+  .computer_header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 24px;
+  }
+}
+/*手機專用*/
+@media screen and (max-width: 767px) {
+  .computer_header {
+    display: none;
+  }
+  /* 第一區 */
+  .search_page div {
+    background-size: contain;
+    width: 100%;
+  }
+  .search_page .wrap {
+    padding: 60px 0px;
+    width: 100%;
+  }
+  .search_bar {
+    width: 50%;
+    height: 30px;
+    font-size: 24px;
+    border-radius: 50px;
+    margin: 0px 5px;
+    text-align: center;
+    border: none;
+  }
+  .search_btn {
+    border-radius: 50px;
+    width: 36px;
+    font-size: 20px;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
+  /* 第二區 */
+  .activity h2 {
+    position: absolute;
+    color: rgba(100, 100, 100, 0.8);
+    letter-spacing: 2px;
+    font-size: 80px;
+    z-index: -10;
+    margin-left: 10px;
+  }
+  .album {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+  }
+  .album div {
+    padding-top: 0px;
+    opacity: 100%;
+    width: 35%;
+    margin: 0px 10px;
+  }
+  .album div:nth-child(even) {
+    margin-top: 0px;
+  }
+  .album div:last-child {
+    display: none;
+  }
+  .date {
+    text-align: right;
+    color: red;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .theme {
+    color: yellow;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .album img {
+    width: 100%;
+    box-shadow: 0 1px 3px gray;
+  }
+  /* 第三區 */
+  .featured h2 {
+    position: absolute;
+    color: rgba(100, 100, 100, 0.8);
+    letter-spacing: 2px;
+    font-size: 80px;
+    z-index: -10;
+    margin-left: 10px;
+  }
+  .featured_product {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+  }
+  .featured_product div {
+    padding-top: 0px;
+    opacity: 100%;
+    width: 35%;
+    margin: 0px 20px;
+    padding-bottom: 20px;
+  }
+  .featured_product div:last-child {
+    display: none;
+  }
+  .featured_product div:nth-child(odd) {
+    margin-top: 0px;
+  }
+  .record {
+    color: yellow;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .featured_product img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px gray;
+  }
+  /* 第四區 */
+  .location {
+    padding-top: 20px;
+    border-top: 3px dotted gray;
+  }
+  .address h3 {
+    /* border: 5px solid white; */
+    margin-bottom: 15px;
+    text-shadow: 0 0 3px rgb(248, 80, 55);
+  }
+  .address p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
